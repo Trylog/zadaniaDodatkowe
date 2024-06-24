@@ -1,0 +1,7 @@
+docker build -t hello-world-app .
+docker login
+docker tag hello-world-app trylog/hello-world-app
+docker push trylog/hello-world-app
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+minikube tunnel
